@@ -627,9 +627,12 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMapCli
 
     override fun onMapLongClick(latLng: LatLng) {
         addOverlay(latLng)
+        toast?.cancel() // Cancel the previous toast if any
+        Toast.makeText(this, "Nana was here, leave a marks", Toast.LENGTH_SHORT).show()
+        toast?.show()
     }
     private fun addOverlay(latLng: LatLng) {
-        val overlayImage: BitmapDescriptor = BitmapDescriptorFactory.fromResource(R.drawable.overlay_carrot)
+        val overlayImage: BitmapDescriptor = BitmapDescriptorFactory.fromResource(R.drawable.overlay_pawprint)
         val overlayWidth = 100f // Width of the overlay in meters
         val overlayHeight = 100f // Height of the overlay in meters
         val groundOverlayOptions = GroundOverlayOptions()
